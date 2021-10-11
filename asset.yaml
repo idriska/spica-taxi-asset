@@ -1169,6 +1169,52 @@ spec:
     read: true==true
   order: 40
 ---
+# BUCKET - STRIPE-Customer
+apiVersion: bucket/v1
+kind: Schema
+metadata:
+  name: stripe-customer-bucket
+spec:
+  title: STRIPE-Customer
+  description: STRIPE-Customer description
+  required:
+    - email
+  acl:
+    write: true==true
+    read: true==true
+  properties:
+    name:
+      type: string
+      options:
+        position: bottom
+      title: name
+    email:
+      type: string
+      options:
+        position: bottom
+      title: email
+    stripe_customer_id:
+      type: string
+      description: DO NOT TOUCH! IT WILL BE FILLED AUTOMATICALLY!
+      options:
+        position: bottom
+      title: stripe_customer_id
+    status:
+      type: string
+      default: creating
+      description: DO NOT TOUCH! IT WILL BE CHANGED AUTOMATICALLY!
+      enum:
+        - creating
+        - done
+        - error
+      options:
+        position: bottom
+      title: status
+  icon: outbond
+  primary: status
+  order: 31
+  history: false
+---
 # BUCKET - STRIPE-Card
 apiVersion: bucket/v1
 kind: Schema
@@ -2474,52 +2520,6 @@ spec:
     write: true==true
     read: true==true
   order: 30
----
-# BUCKET - STRIPE-Customer
-apiVersion: bucket/v1
-kind: Schema
-metadata:
-  name: stripe-customer-bucket
-spec:
-  title: STRIPE-Customer
-  description: STRIPE-Customer description
-  required:
-    - email
-  acl:
-    write: true==true
-    read: true==true
-  properties:
-    name:
-      type: string
-      options:
-        position: bottom
-      title: name
-    email:
-      type: string
-      options:
-        position: bottom
-      title: email
-    stripe_customer_id:
-      type: string
-      description: DO NOT TOUCH! IT WILL BE FILLED AUTOMATICALLY!
-      options:
-        position: bottom
-      title: stripe_customer_id
-    status:
-      type: string
-      default: creating
-      description: DO NOT TOUCH! IT WILL BE CHANGED AUTOMATICALLY!
-      enum:
-        - creating
-        - done
-        - error
-      options:
-        position: bottom
-      title: status
-  icon: outbond
-  primary: status
-  order: 31
-  history: false
 ---
 # BUCKET - Taxi Support
 apiVersion: bucket/v1
