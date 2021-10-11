@@ -13,7 +13,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-card
+  name: stripe-card-bucket
 spec:
   title: STRIPE-Card
   description: STRIPE-Card of customers
@@ -54,7 +54,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-payment-method
+  name: stripe-payment-method-bucket
 spec:
   title: STRIPE-Payment Method
   description: STRIPE-Payment Method description
@@ -98,7 +98,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-plan
+  name: stripe-plan-bucket
 spec:
   title: STRIPE-Plan
   description: STRIPE-Plan description
@@ -161,7 +161,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-payment
+  name: stripe-payment-bucket
 spec:
   title: STRIPE-Payment
   description: STRIPE-Payment description
@@ -225,7 +225,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-user
+  name: taxi-user-bucket
 spec:
   title: Taxi User
   description: Describe your new bucket
@@ -368,7 +368,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-stripe-cards
+  name: taxi-stripe-cards-bucket
 spec:
   title: Taxi Stripe Cards
   description: "Stripe cards "
@@ -416,7 +416,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-address
+  name: taxi-address-bucket
 spec:
   title: Taxi Address
   description: Describe your new bucket
@@ -472,7 +472,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-driver
+  name: taxi-driver-bucket
 spec:
   title: Taxi Driver
   description: Describe your new bucket
@@ -661,7 +661,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-ride
+  name: taxi-ride-bucket
 spec:
   title: Taxi Ride
   description: Describe your new bucket
@@ -876,7 +876,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-ride-request
+  name: taxi-ride-request-bucket
 spec:
   title: Taxi Ride Request
   description: Describe your new bucket
@@ -920,7 +920,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-rating
+  name: taxi-rating-bucket
 spec:
   title: Taxi Rating
   description: Describe your new bucket
@@ -964,7 +964,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-active-log
+  name: taxi-active-log-bucket
 spec:
   title: Taxi Active Log
   description: Describe your new bucket
@@ -1004,7 +1004,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-transaction
+  name: taxi-transaction-bucket
 spec:
   title: Taxi Transaction
   description: Describe your new bucket
@@ -1078,7 +1078,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-car
+  name: taxi-car-bucket
 spec:
   title: Taxi Car
   description: SETO Cars
@@ -1141,7 +1141,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-coupon-user
+  name: taxi-coupon-user-bucket
 spec:
   title: Taxi Coupon-User
   description: SETO Coupons Users
@@ -1173,7 +1173,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-card
+  name: stripe-card-bucket
 spec:
   title: STRIPE-Card
   description: STRIPE-Card of customers
@@ -1193,7 +1193,7 @@ spec:
       title: customer
       bucket:
         resourceFieldRef:
-          schemaName: stripe-customer
+          schemaName: stripe-customer-bucket
     card_id:
       type: string
       description: DONT TOUCH, IT WILL BE FILLED AUTOMATICALLY
@@ -1224,7 +1224,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-payment-method
+  name: stripe-payment-method-bucket
 spec:
   title: STRIPE-Payment Method
   description: STRIPE-Payment Method description
@@ -1244,7 +1244,7 @@ spec:
       title: customer
       bucket:
         resourceFieldRef:
-          schemaName: stripe-customer
+          schemaName: stripe-customer-bucket
     payment_method_id:
       type: string
       description: WRITE PAYMENT METHOD ID OF THIS CUSTOMER
@@ -1278,7 +1278,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-product
+  name: stripe-product-bucket
 spec:
   required:
     - name
@@ -1319,7 +1319,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-plan
+  name: stripe-plan-bucket
 spec:
   title: STRIPE-Plan
   description: STRIPE-Plan description
@@ -1341,7 +1341,7 @@ spec:
       title: product
       bucket:
         resourceFieldRef:
-          schemaName: stripe-product
+          schemaName: stripe-product-bucket
     interval:
       type: string
       default: month
@@ -1392,7 +1392,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-payment
+  name: stripe-payment-bucket
 spec:
   title: STRIPE-Payment
   description: STRIPE-Payment description
@@ -1411,7 +1411,7 @@ spec:
       title: customer
       bucket:
         resourceFieldRef:
-          schemaName: stripe-customer
+          schemaName: stripe-customer-bucket
     payment_method:
       type: relation
       relationType: onetoone
@@ -1421,7 +1421,7 @@ spec:
       title: payment_method
       bucket:
         resourceFieldRef:
-          schemaName: stripe-payment-method
+          schemaName: stripe-payment-method-bucket
     card:
       type: relation
       relationType: onetoone
@@ -1431,7 +1431,7 @@ spec:
       title: card
       bucket:
         resourceFieldRef:
-          schemaName: stripe-card
+          schemaName: stripe-card-bucket
     payment_type:
       type: string
       description: SELECT PAYMENT TYPE
@@ -1481,7 +1481,7 @@ spec:
       title: plan
       bucket:
         resourceFieldRef:
-          schemaName: stripe-plan
+          schemaName: stripe-plan-bucket
     subscribe_id:
       type: string
       description: DO NOT TOUCH! IT WILL BE FILLED AUTOMATICALLY WHEN SUBSCRIBING.
@@ -1496,7 +1496,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-user
+  name: taxi-user-bucket
 spec:
   title: Taxi User
   description: Describe your new bucket
@@ -1640,7 +1640,7 @@ spec:
       primary: card_token
       bucket:
         resourceFieldRef:
-          schemaName: taxi-stripe-cards
+          schemaName: taxi-stripe-cards-bucket
   acl:
     write: true==true
     read: true==true
@@ -1651,7 +1651,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-stripe-cards
+  name: taxi-stripe-cards-bucket
 spec:
   title: Taxi Stripe Cards
   description: "Stripe cards "
@@ -1700,7 +1700,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
   acl:
     write: true==true
     read: true==true
@@ -1710,7 +1710,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-address
+  name: taxi-address-bucket
 spec:
   title: Taxi Address
   description: Describe your new bucket
@@ -1767,7 +1767,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
   acl:
     write: true==true
     read: true==true
@@ -1777,7 +1777,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-vehicle-type
+  name: taxi-vehicle-type-bucket
 spec:
   title: Taxi Vehicle Type
   description: Describe your new bucket
@@ -1851,7 +1851,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-driver
+  name: taxi-driver-bucket
 spec:
   title: Taxi Driver
   description: Describe your new bucket
@@ -1871,7 +1871,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     vehicle_type:
       type: relation
       title: vehicle_type
@@ -1883,7 +1883,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-vehicle-type
+          schemaName: taxi-vehicle-type-bucket
     car:
       type: relation
       title: car
@@ -1895,7 +1895,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-car
+          schemaName: taxi-car-bucket
     is_verified:
       type: number
       title: is_verified
@@ -2076,7 +2076,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-setting
+  name: taxi-setting-bucket
 spec:
   title: Taxi Setting
   description: Describe your new bucket
@@ -2106,7 +2106,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-ride
+  name: taxi-ride-bucket
 spec:
   title: Taxi Ride
   description: Describe your new bucket
@@ -2126,7 +2126,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     address_from:
       type: string
       title: address_from
@@ -2150,7 +2150,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-vehicle-type
+          schemaName: taxi-vehicle-type-bucket
     driver:
       type: relation
       title: driver
@@ -2162,7 +2162,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-driver
+          schemaName: taxi-driver-bucket
     longitude_from:
       type: number
       title: longitude_from
@@ -2359,7 +2359,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-payment-method
+          schemaName: taxi-payment-method-bucket
   acl:
     write: true==true
     read: true==true
@@ -2369,7 +2369,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-payment-method
+  name: taxi-payment-method-bucket
 spec:
   title: Taxi Payment Method
   description: Describe your new bucket
@@ -2413,7 +2413,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-ride-request
+  name: taxi-ride-request-bucket
 spec:
   title: Taxi Ride Request
   description: Describe your new bucket
@@ -2432,7 +2432,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-driver
+          schemaName: taxi-driver-bucket
     ride:
       type: relation
       title: ride
@@ -2443,7 +2443,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-ride
+          schemaName: taxi-ride-bucket
     status:
       type: string
       title: status
@@ -2479,7 +2479,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: stripe-customer
+  name: stripe-customer-bucket
 spec:
   title: STRIPE-Customer
   description: STRIPE-Customer description
@@ -2525,7 +2525,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-support
+  name: taxi-support-bucket
 spec:
   title: Taxi Support
   description: Describe your new bucket
@@ -2575,7 +2575,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-faq
+  name: taxi-faq-bucket
 spec:
   title: Taxi Faq
   description: Describe your new bucket
@@ -2625,7 +2625,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-coupon
+  name: taxi-coupon-bucket
 spec:
   title: Taxi Coupon
   description: Describe your new bucket
@@ -2690,7 +2690,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-rating
+  name: taxi-rating-bucket
 spec:
   title: Taxi Rating
   description: Describe your new bucket
@@ -2722,7 +2722,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     rating_from:
       type: relation
       title: rating_from
@@ -2734,7 +2734,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     created_at:
       type: date
       title: created_at
@@ -2759,7 +2759,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-ride
+          schemaName: taxi-ride-bucket
   acl:
     write: true==true
     read: true==true
@@ -2769,7 +2769,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-active-log
+  name: taxi-active-log-bucket
 spec:
   title: Taxi Active Log
   description: Describe your new bucket
@@ -2789,7 +2789,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     created_at:
       type: date
       title: created_at
@@ -2821,7 +2821,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-transaction
+  name: taxi-transaction-bucket
 spec:
   title: Taxi Transaction
   description: Describe your new bucket
@@ -2868,7 +2868,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     is_paid:
       type: number
       title: is_paid
@@ -2889,7 +2889,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-ride
+          schemaName: taxi-ride-bucket
     source:
       type: string
       title: source
@@ -2919,7 +2919,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-car
+  name: taxi-car-bucket
 spec:
   title: Taxi Car
   description: SETO Cars
@@ -2939,7 +2939,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-vehicle-type
+          schemaName: taxi-vehicle-type-bucket
     model:
       type: string
       title: model
@@ -2994,7 +2994,7 @@ spec:
 apiVersion: bucket/v1
 kind: Schema
 metadata:
-  name: taxi-coupon-user
+  name: taxi-coupon-user-bucket
 spec:
   title: Taxi Coupon-User
   description: SETO Coupons Users
@@ -3021,7 +3021,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-user
+          schemaName: taxi-user-bucket
     coupon:
       type: relation
       title: coupon
@@ -3033,7 +3033,7 @@ spec:
       dependent: false
       bucket:
         resourceFieldRef:
-          schemaName: taxi-coupon
+          schemaName: taxi-coupon-bucket
     used_at:
       type: date
       title: used_at
@@ -3050,32 +3050,46 @@ spec:
 apiVersion: function/v1
 kind: Function
 metadata:
-  name: taxi-ride-accept
+  name: taxi-ride-accept-function
 spec:
   description: Seto ride accept
   language: javascript
   timeout: 50
   environment:
     - name: STRIPE_PAYMENT_METHOD_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-payment-method-bucket
     - name: STRIPE_PAYMENT_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-payment-bucket
     - name: STRIPE_CUSTOMER_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-customer-bucket
     - name: STRIPE_CARD_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-card-bucket
     - name: SECRET_API_KEY
       valueFrom:
         resourceFieldRef:
           apiKeyName: taxi-asset-apikey
     - name: TAXI_RIDE_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-ride-bucket
     - name: GOOGLE_MAP_API_KEY
       value: ""
     - name: TAXI_COUPON_USER_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-coupon-user-bucket
     - name: TAXI_COUPON_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-coupon-bucket
   dependency:
     - name: "@spica-devkit/bucket"
       version: ^0.8.8
@@ -3084,7 +3098,7 @@ spec:
     - name: node-fetch
       version: ^2.6.1
   title: Taxi Ride Accept
-  code: ./function/taxi-ride-accept.js
+  code: ./function/taxi-ride-accept-function.js
   runtime:
     name: Node
     language: Javascript
@@ -3093,14 +3107,16 @@ spec:
 apiVersion: function/v1
 kind: Function
 metadata:
-  name: taxi-summary-rating
+  name: taxi-summary-rating-function
 spec:
   description: Taxi summary rating
   language: javascript
   timeout: 60
   environment:
     - name: TAXI_RATING_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-rating-bucket
     - name: SECRET_API_KEY
       valueFrom:
         resourceFieldRef:
@@ -3109,7 +3125,7 @@ spec:
     - name: "@spica-devkit/bucket"
       version: ^0.9.7
   title: Taxi Summary Rating
-  code: ./function/taxi-summary-rating.js
+  code: ./function/taxi-summary-rating-function.js
   runtime:
     name: Node
     language: Javascript
@@ -3118,7 +3134,7 @@ spec:
 apiVersion: function/v1
 kind: Function
 metadata:
-  name: taxi-auth
+  name: taxi-auth-function
 spec:
   description: Taxi auth function
   language: javascript
@@ -3129,7 +3145,9 @@ spec:
         resourceFieldRef:
           apiKeyName: taxi-asset-apikey
     - name: TAXI_USER_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-user-bucket
     - name: TAXI_PUBLIC_POLICY
       value: ""
   dependency:
@@ -3146,7 +3164,7 @@ spec:
     - name: util
       version: ^0.12.3
   title: Taxi Auth
-  code: ./function/taxi-auth.js
+  code: ./function/taxi-auth-function.js
   runtime:
     name: Node
     language: Javascript
@@ -3155,7 +3173,7 @@ spec:
 apiVersion: function/v1
 kind: Function
 metadata:
-  name: taxi-stripe-functions
+  name: taxi-stripe-functions-function
 spec:
   description: Stripe Functions description
   language: javascript
@@ -3166,30 +3184,46 @@ spec:
         resourceFieldRef:
           apiKeyName: taxi-asset-apikey
     - name: STRIPE_TEST
-      value: ""
+      value: stripe secret test here
     - name: CUSTOMER_BUCKET_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-customer-bucket
     - name: PAYMENT_METHOD_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-payment-method-bucket
     - name: PRODUCT_BUCKET_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-product-bucket
     - name: PLAN_BUCKET_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-plan-bucket
     - name: PAYMENT_BUCKET_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-payment-bucket
     - name: CARD_BUCKET_ID
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: stripe-card-bucket
     - name: TAXI_CARDS_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-stripe-cards-bucket
     - name: TAXI_USER_BUCKET
-      value: ""
+      valueFrom:
+        resourceFieldRef:
+          schemaName: taxi-user-bucket
   dependency:
     - name: "@spica-devkit/bucket"
-      version: latest
+      version: ^0.9.11
     - name: stripe
       version: ^8.178.0
   title: Taxi Stripe Functions
-  code: ./function/taxi-stripe-functions.js
+  code: ./function/taxi-stripe-functions-function.js
   runtime:
     name: Node
     language: Javascript
@@ -3206,11 +3240,11 @@ spec:
     deadline: 45
     limit: 9007199254740991
   name: rideAccept
-  func: taxi-ride-accept
+  func: taxi-ride-accept-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: taxi-ride-request
+        schemaName: taxi-ride-request-bucket
     type: UPDATE
 ---
 # TRIGGER - rideUpdate
@@ -3225,11 +3259,11 @@ spec:
     deadline: 45
     limit: 9007199254740991
   name: rideUpdate
-  func: taxi-ride-accept
+  func: taxi-ride-accept-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: taxi-ride
+        schemaName: taxi-ride-bucket
     type: UPDATE
 ---
 # TRIGGER - summaryRating
@@ -3241,7 +3275,7 @@ spec:
   type: http
   active: true
   name: summaryRating
-  func: taxi-summary-rating
+  func: taxi-summary-rating-function
   httpOptions:
     method: Get
     path: /summary_rating
@@ -3255,7 +3289,7 @@ spec:
   type: http
   active: true
   name: register
-  func: taxi-auth
+  func: taxi-auth-function
   httpOptions:
     method: Post
     path: /register
@@ -3269,7 +3303,7 @@ spec:
   type: http
   active: true
   name: login
-  func: taxi-auth
+  func: taxi-auth-function
   httpOptions:
     method: Post
     path: /login
@@ -3283,199 +3317,199 @@ spec:
   type: http
   active: true
   name: checkUser
-  func: taxi-auth
+  func: taxi-auth-function
   httpOptions:
     method: Get
     path: /check_user
 ---
-# TRIGGER - PAYMENT METHOD TRIGGER
+# TRIGGER - paymentMethod
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: payment-method-trigger
-spec:
   name: paymentMethod
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: paymentMethod
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-payment-method
-    phase: AFTER
+        schemaName: stripe-payment-method-bucket
     type: INSERT
 ---
-# TRIGGER - PAYMENT TRIGGER
+# TRIGGER - payment
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: payment-trigger
-spec:
   name: payment
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: payment
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-payment
-    phase: AFTER
+        schemaName: stripe-payment-bucket
     type: INSERT
 ---
-# TRIGGER - CUSTOMER TRIGGER
+# TRIGGER - customer
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: customer-trigger
-spec:
   name: customer
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: customer
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-customer
-    phase: AFTER
+        schemaName: stripe-customer-bucket
     type: INSERT
 ---
-# TRIGGER - PRODUCT TRIGGER
+# TRIGGER - product
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: product-trigger
-spec:
   name: product
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: product
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-product
-    phase: AFTER
+        schemaName: stripe-product-bucket
     type: INSERT
 ---
-# TRIGGER - PLAN
+# TRIGGER - plan
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: plan-trigger
-spec:
   name: plan
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: plan
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-plan
-    phase: AFTER
+        schemaName: stripe-plan-bucket
     type: INSERT
 ---
-# TRIGGER - CARD
+# TRIGGER - card
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: card-trigger
-spec:
   name: card
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: card
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-card
-    phase: AFTER
+        schemaName: stripe-card-bucket
     type: INSERT
 ---
-# TRIGGER - DELETE PAYMENT METHOD
+# TRIGGER - deletePaymentMethod
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: delete-payment-method-trigger
-spec:
   name: deletePaymentMethod
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: deletePaymentMethod
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-payment-method
-    phase: AFTER
+        schemaName: stripe-payment-method-bucket
     type: DELETE
 ---
-# TRIGGER - Delete Product
+# TRIGGER - deleteProduct
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: delete-product-trigger
-spec:
   name: deleteProduct
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: deleteProduct
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-product
-    phase: AFTER
+        schemaName: stripe-product-bucket
     type: DELETE
 ---
-# TRIGGER - Delete Payment
+# TRIGGER - deletePayment
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: delete-payment-trigger
-spec:
   name: deletePayment
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: deletePayment
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-payment
-    phase: AFTER
+        schemaName: stripe-payment-bucket
     type: DELETE
 ---
-# TRIGGER - Delete Plan
+# TRIGGER - deletePlan
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: delete-plan-trigger
-spec:
   name: deletePlan
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: deletePlan
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-plan
-    phase: AFTER
+        schemaName: stripe-plan-bucket
     type: DELETE
 ---
-# TRIGGER - Delete Card
+# TRIGGER - deleteCard
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: delete-card-trigger
-spec:
   name: deleteCard
-  func: taxi-stripe-functions
+spec:
+  active: true
   type: bucket
+  name: deleteCard
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: stripe-card
-    phase: AFTER
+        schemaName: stripe-card-bucket
     type: DELETE
 ---
-# TRIGGER - Create Stipe Token Card
+# TRIGGER - createStripeToken
 apiVersion: function/v1
 kind: Trigger
 metadata:
-  name: create-stripe-token
-spec:
   name: createStripeToken
-  func: taxi-stripe-functions
+spec:
   type: bucket
+  active: true
+  name: createStripeToken
+  func: taxi-stripe-functions-function
   bucketOptions:
     bucket:
       resourceFieldRef:
-        schemaName: taxi-stripe-cards
-    phase: AFTER
+        schemaName: taxi-stripe-cards-bucket
     type: INSERT
