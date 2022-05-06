@@ -6,9 +6,9 @@ const TAXI_RATING_BUCKET = process.env.TAXI_RATING_BUCKET;
 export async function summaryRating(req, res) {
     Bucket.initialize({ apikey: SECRET_API_KEY });
   
-    let ratingsData = await Bucket.data.getAll(TAXI_RATING_BUCKET, {queryParams: {
-        rating_to: req.query.id
-    }});
+    let ratingsData = await Bucket.data.getAll(TAXI_RATING_BUCKET, {
+        queryParams: { filter: { rating_to: req.query.id } },
+    });
     
     var ratings = [];
     var ratSum = 0;
